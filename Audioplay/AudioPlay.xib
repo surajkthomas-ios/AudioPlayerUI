@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudioPlay" customModule="AudioPlayerView" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundview" destination="pSB-MG-v4M" id="cls-Ld-LfY"/>
+                <outlet property="playButton" destination="nmY-ui-9F4" id="wtN-cE-dnH"/>
+                <outlet property="timeLabel" destination="3IV-XR-Zqh" id="oMK-yE-awa"/>
+                <outlet property="timeSlider" destination="yPx-jl-l4C" id="w1b-f9-yYQ"/>
+                <outlet property="view" destination="AB3-JX-r91" id="845-XY-Bot"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="AB3-JX-r91" userLabel="Content">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSB-MG-v4M">
+                    <rect key="frame" x="13" y="11" width="388" height="78"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmY-ui-9F4">
+                            <rect key="frame" x="15" y="21.5" width="35" height="35"/>
+                            <state key="normal" image="PlayBlack"/>
+                            <connections>
+                                <action selector="playButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="xyK-uV-Evf"/>
+                            </connections>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yPx-jl-l4C">
+                            <rect key="frame" x="111" y="24" width="254" height="31"/>
+                            <connections>
+                                <action selector="timeSliderChangedWithSender:" destination="-1" eventType="valueChanged" id="KT0-mh-DgR"/>
+                                <action selector="timeSliderTouchDownWithSender:" destination="-1" eventType="valueChanged" id="koM-fa-Y9G"/>
+                                <action selector="timeSliderTouchUpOutsideWithSender:" destination="-1" eventType="valueChanged" id="kTP-SA-dyx"/>
+                                <action selector="timeSliderTouchUpWithSender:" destination="-1" eventType="valueChanged" id="Mzd-52-V7A"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-XR-Zqh">
+                            <rect key="frame" x="327" y="50" width="36" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yPx-jl-l4C" firstAttribute="trailing" secondItem="3IV-XR-Zqh" secondAttribute="trailing" id="3x4-cG-Epx"/>
+                        <constraint firstItem="nmY-ui-9F4" firstAttribute="leading" secondItem="pSB-MG-v4M" secondAttribute="leading" constant="15" id="CcI-ab-wQx"/>
+                        <constraint firstItem="yPx-jl-l4C" firstAttribute="leading" secondItem="nmY-ui-9F4" secondAttribute="trailing" constant="63" id="Ko9-As-7SE"/>
+                        <constraint firstItem="nmY-ui-9F4" firstAttribute="centerY" secondItem="yPx-jl-l4C" secondAttribute="centerY" id="MTd-WT-gHB"/>
+                        <constraint firstAttribute="trailing" secondItem="yPx-jl-l4C" secondAttribute="trailing" constant="25" id="VT9-HL-GPV"/>
+                        <constraint firstItem="nmY-ui-9F4" firstAttribute="centerY" secondItem="pSB-MG-v4M" secondAttribute="centerY" id="Z9t-j5-mNa"/>
+                        <constraint firstItem="3IV-XR-Zqh" firstAttribute="top" secondItem="pSB-MG-v4M" secondAttribute="top" constant="50" id="o1y-za-BC1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wpF-P1-aoN"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pSB-MG-v4M" firstAttribute="leading" secondItem="wpF-P1-aoN" secondAttribute="leading" constant="13" id="2at-aE-79r"/>
+                <constraint firstItem="wpF-P1-aoN" firstAttribute="bottom" secondItem="pSB-MG-v4M" secondAttribute="bottom" constant="11" id="gPN-2D-Rws"/>
+                <constraint firstItem="pSB-MG-v4M" firstAttribute="centerY" secondItem="AB3-JX-r91" secondAttribute="centerY" id="oTZ-dR-khu"/>
+                <constraint firstItem="pSB-MG-v4M" firstAttribute="centerX" secondItem="AB3-JX-r91" secondAttribute="centerX" id="vqz-qp-tOY"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="189.85507246376812" y="-72.321428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PlayBlack" width="35" height="35"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
